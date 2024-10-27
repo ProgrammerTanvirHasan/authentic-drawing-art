@@ -15,8 +15,9 @@ const AllArt = () => {
                 <div className="grid grid-cols-6 lg:gap-4 text-orange-300 lg:text-2xl mb-2">
                     <th>SL</th>
                     <th>Name</th>
-                    <th>Sub_Name</th>
+                    <th>Email</th>
                     <th>Rating</th>
+                    <th>Price</th>
                     <th>Price</th>
                     <th></th>
                 </div>

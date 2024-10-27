@@ -12,58 +12,67 @@ import AddCraft from "../addCraft/AddCraft";
 import Details from "../details/Details";
 import Update from "../update/Update";
 
-
-
-
 const router = createBrowserRouter([
-{
-    path:"/",
-    element:<Root></Root>,
-    errorElement:<Error></Error>,
-    children:[
-        {
-            path:"/",
-            element:<Home></Home>,
-            loader:()=>fetch("http://localhost:4000/items")
-            
-        },
-        {
-            path:"/login",
-            element:<Login></Login>
-        },
-       {
-        path:"/register",
-        element:<Register></Register>
-       },
-       {
-        path:"/addCraft",
-        element:<PrivateRoute> <AddCraft></AddCraft> </PrivateRoute>
-       },
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <Error></Error>,
+    children: [
       {
-        path:"/myCraft",
-        element:<PrivateRoute><MyCraft></MyCraft></PrivateRoute>,
-        loader:()=>fetch("http://localhost:4000/items")
+        path: "/",
+        element: <Home></Home>,
+        loader: () => fetch("http://localhost:4000/items"),
       },
-    {
-        path:"/allArt",
-        element:<AllArt></AllArt>,
-        loader:()=>fetch("http://localhost:4000/items")
-    },
-    {
-        path:"/details/:id",
-        element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:4000/items/${params.id}`)
-    },
-    {
-        path:"/update/:id",
-        element:<Update></Update>,
-        loader:({params})=>fetch(`http://localhost:4000/items/${params.id}`)
-    }
-  
-    ]
-}
-
-
-])
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/addCraft",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <AddCraft></AddCraft>{" "}
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/myCraft",
+        element: (
+          <PrivateRoute>
+            <MyCraft></MyCraft>
+          </PrivateRoute>
+        ),
+        loader: () =>
+          fetch(`http://localhost:4000/items?email=hasanmdtanvir916@gmail.com`),
+      },
+      {
+        path: "/allArt",
+        element: <AllArt></AllArt>,
+        loader: () => fetch("http://localhost:4000/items"),
+      },
+      {
+        path: "/details/:id",
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:4000/items/${params.id}`),
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:4000/items/${params.id}`),
+      },
+    ],
+  },
+]);
 
 export default router;
