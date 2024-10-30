@@ -51,9 +51,9 @@ const CraftItem = ({ card }) => {
               {" "}
               <IoMdTime></IoMdTime> {Time} Min
             </h2>
-            <h2 className="card-title text-6xl ml-2 font-bold text-amber-600">
+            <h2 className="card-title text-4xl ml-2 font-bold text-amber-600">
               {Price}
-              <FaDollarSign></FaDollarSign>{" "}
+              <FaDollarSign className="text-5xl text-black"></FaDollarSign>{" "}
             </h2>
           </div>
 
@@ -69,18 +69,18 @@ const CraftItem = ({ card }) => {
     </div>
   );
 };
-CraftItem.propTypes = {
-  card: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    item: PropTypes.string.isRequired,
-    Subcategory: PropTypes.string.isRequired,
-    customization: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    Time: PropTypes.number.isRequired,
-    Price: PropTypes.number.isRequired,
-    rating: PropTypes.number.isRequired,
-    stock: PropTypes.number.isRequired,
-  }).isRequired,
-};
+// CraftItem.propTypes = {
+//   card: PropTypes.shape({
+//     _id: PropTypes.string.isRequired,
+//     item: PropTypes.string.isRequired,
+//     Subcategory: PropTypes.string.isRequired,
+//     customization: PropTypes.string.isRequired,
+//     image: PropTypes.string.isRequired,
+//     Time: PropTypes.number.isRequired,
+//     Price: PropTypes.number.isRequired,
+//     rating: PropTypes.number.isRequired,
+//     stock: PropTypes.number.isRequired,
+//   }).isRequired,
+// };
 
 export default CraftItem;

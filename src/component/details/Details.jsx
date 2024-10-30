@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 
 const Details = () => {
   const specificData = useLoaderData();
+  
 
   return (
     <div className="flex justify-center items-center mt-8">

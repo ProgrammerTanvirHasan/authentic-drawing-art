@@ -25,8 +25,7 @@ const Update = () => {
     e.preventDefault();
     const form = e.target;
     const item = form.items.value;
-    const email = form.email.value;
-    const name = form.name.value;
+
     const Subcategory = form.subcategory.value;
     const Description = form.shortDescription.value;
     const image = form.image.value;
@@ -37,8 +36,6 @@ const Update = () => {
     const stock = form.stock.value;
 
     const updatedItem = {
-      email,
-      name,
       item,
       Subcategory,
       Description,
@@ -48,6 +45,8 @@ const Update = () => {
       rating,
       customization,
       stock,
+      email: user?.email,
+      name: user?.displayName,
     };
     console.log(updatedItem);
 
@@ -61,7 +60,7 @@ const Update = () => {
       confirmButtonText: "Yes, update it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/items/${_id}`, {
+        fetch(`http://localhost:4000/${_id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
@@ -96,32 +95,7 @@ const Update = () => {
           <div className="card bg-violet-400 w-full shadow-2xl">
             <form onSubmit={handleUpdate} className="card-body">
               <div className="form-control">
-                <div className="lg:flex gap-4">
-                  <div>
-                    <label className="label">
-                      <span className="label-text">Email</span>
-                    </label>
-                    <input
-                      type="email"
-                      defaultValue={user?.email}
-                      name="email"
-                      placeholder="Email"
-                      className="input input-bordered"
-                    />
-                  </div>
-                  <div>
-                    <label className="label">
-                      <span className="label-text">UserName</span>
-                    </label>
-                    <input
-                      type="text"
-                      defaultValue={user.displayName}
-                      name="name"
-                      placeholder="Name"
-                      className="input input-bordered"
-                    />
-                  </div>
-                </div>
+                <div className="lg:flex gap-4"></div>
 
                 <div className="lg:flex gap-4">
                   <div>
