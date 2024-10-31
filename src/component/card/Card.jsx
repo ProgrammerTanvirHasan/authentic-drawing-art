@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import { FaDollarSign } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -105,24 +104,6 @@ const Card = ({ data, myCard, setMyCard }) => {
       </div>
     </div>
   );
-};
-
-Card.propTypes = {
-  data: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    item: PropTypes.string.isRequired,
-    customization: PropTypes.string,
-    Subcategory: PropTypes.string,
-    image: PropTypes.string.isRequired,
-    Price: PropTypes.number.isRequired,
-    Time: PropTypes.number.isRequired,
-    rating: PropTypes.number,
-    stock: PropTypes.number,
-  }).isRequired,
-
-  myCard: PropTypes.arrayOf().isRequired,
-
-  setMyCard: PropTypes.func.isRequired,
 };
 
 export default Card;

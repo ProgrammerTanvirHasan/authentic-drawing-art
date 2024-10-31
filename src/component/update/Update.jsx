@@ -48,7 +48,7 @@ const Update = () => {
       email: user?.email,
       name: user?.displayName,
     };
-    console.log(updatedItem);
+   
 
     Swal.fire({
       title: "Are you sure?",

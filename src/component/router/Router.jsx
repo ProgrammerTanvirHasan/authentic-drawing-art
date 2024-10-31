@@ -47,7 +47,7 @@ const router = createBrowserRouter([
             <MyCraft></MyCraft>
           </PrivateRoute>
         ),
-        loader: () => fetch(`http://localhost:4000/items`),
+        loader: () => fetch("http://localhost:4000/items"),
       },
       {
         path: "/allArt",
